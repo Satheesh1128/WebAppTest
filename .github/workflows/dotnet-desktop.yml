@@ -37,5 +37,6 @@ jobs:
       run: |
         msbuild WebAppTest.sln /t:Restore /p:Configuration=Release
         powershell Get-ChildItem
-        cd bin\release
+        cd bin
+        powershell Get-ChildItem
 
