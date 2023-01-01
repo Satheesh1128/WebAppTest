@@ -35,7 +35,8 @@ jobs:
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
       run: |
-        msbuild WebAppTest.sln /t:Restore /p:Configuration=Release
+        # msbuild WebAppTest.sln /t:Restore /p:Configuration=Release
+        msbuild WebAppTest.sln -t:rebuild -verbosity:diag -property:Configuration=Release
         powershell Get-ChildItem
         cd bin
         powershell Get-ChildItem
