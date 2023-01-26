@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Set the value
         run: |
-          echo ${{needs.build.outputs.Test}}
+          echo ${{needs.build.outputs.env.Test}}
