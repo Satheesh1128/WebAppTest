@@ -17,6 +17,6 @@ jobs:
         run: |
           echo "action_state=yellow" >> $GITHUB_OUTPUT
           echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT       
-        env:
-            Test: ${{steps.step_one.outputs.action_state}}
-            Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
+    outputs:
+      Test: ${{steps.step_one.outputs.action_state}}
+      Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
