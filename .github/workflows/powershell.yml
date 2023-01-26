@@ -21,4 +21,4 @@ jobs:
           
       - name: Set the value1
         run: |
-          run: echo "The selected color is ${{ steps.step_one.SELECTED_COLOR }}" 
+          echo "The selected color is ${{ steps.step_one.SELECTED_COLOR }}" 
