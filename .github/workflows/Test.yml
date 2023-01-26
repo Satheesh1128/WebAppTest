@@ -26,4 +26,3 @@ jobs:
       - name: Set the value
         run: |
           echo ${{needs.build.outputs.DateTime}}
-          ${{needs.build.outputs.DateTime}}
