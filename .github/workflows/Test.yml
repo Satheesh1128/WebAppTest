@@ -20,6 +20,7 @@ jobs:
           
       - name: Outputs
         id: Outputs
+        run: |          
         env:
             Test: ${{steps.step_one.outputs.action_state}}
             Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
