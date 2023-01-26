@@ -28,5 +28,8 @@ jobs:
       - name: Test with input
         run: |
           echo "Mona-the-Octocat-${{ steps.date.outputs.date }}"
-          "${{ steps.date.outputs.date }}"
-          "${{ steps.date.outputs.date }}"
+          echo "${{ steps.date.outputs.date }}"
+          echo "${{ steps.date.outputs.date }}"
+          echo "$GITHUB_OUTPUT"
+          echo "$date"
+          echo "${{ env.date }}"
