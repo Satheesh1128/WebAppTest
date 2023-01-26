@@ -35,3 +35,4 @@ jobs:
       - name: Set the value
         run: |
           echo ${{needs.build.outputs.Test}}
+          ${{needs.build.outputs.Test1}}
