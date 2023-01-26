@@ -22,6 +22,4 @@ jobs:
           TAG_NAME: nightly-tag-${{ steps.date.outputs.date }}
           RELEASE_NAME: nightly-release-${{ steps.date.outputs.date }}
       - name: Test with input
-        uses: actions/hello-world-docker-action@master
-        with:
-          who-to-greet: Mona-the-Octocat-${{ steps.date.outputs.date }}
+        run: echo "Mona-the-Octocat-${{ steps.date.outputs.date }}"
