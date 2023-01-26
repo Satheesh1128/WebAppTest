@@ -25,3 +25,20 @@ jobs:
           $DEBUG
         env:
           DEBUG: ${{ steps.version.outputs.builddate }}-DEBUG
+          
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+          
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}"
+          echo $Test
+          echo $Test1
+          echo "$Test"
+          echo "$Test1"
+        env:
+          Test: "${{ steps.step_one.outputs.action_state }}"
+          Test1: ${{ steps.step_one.outputs.action_state }}
