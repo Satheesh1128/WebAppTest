@@ -26,4 +26,4 @@ jobs:
           echo $Test
           echo "$Test"
         env:
-          Test: "${{ steps.step_one.action_state }}"
+          Test: ${{ steps.step_one.action_state }}
