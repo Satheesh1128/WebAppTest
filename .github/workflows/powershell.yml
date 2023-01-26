@@ -18,5 +18,3 @@ jobs:
         run: |
           powershell $Service = Get-Date -Format "dd/MM/yyyy HH:mm:ss" 
           powershell write-Output("$Service - Not Running correct number of count")
-        env:
-          Test1: ${{ Service }}
