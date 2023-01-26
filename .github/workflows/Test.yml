@@ -12,7 +12,7 @@ jobs:
 
   build:
   
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Set current date as env variable
         run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
