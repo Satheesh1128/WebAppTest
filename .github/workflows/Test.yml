@@ -17,7 +17,7 @@ jobs:
       - name: Set color
         id: version
         run: |
-          echo "builddate=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          echo "builddate=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
           
       - name: Test with environment variables
         run: |
