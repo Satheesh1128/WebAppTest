@@ -24,9 +24,6 @@ jobs:
         id: step_two
         run: |
           echo $Test
-          echo $Test1
           echo "$Test"
-          echo "$Test1"
         env:
-          Test: "${{ steps.step_one }}"
-          Test1: ${{ env.step_one }}
+          Test: "${{ steps.step_one.action_state }}"
