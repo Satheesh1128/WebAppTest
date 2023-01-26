@@ -15,14 +15,11 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "action_state=yellow" >> $GITHUB_ENV
+          echo "action_state=yellow" >> $GITHUB_OUTPUT
           echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
           
       - name: Outputs
         id: Outputs
-        run: |
-          echo $Test
-          echo $Test1
         env:
             Test: ${{steps.step_one.outputs.action_state}}
             Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
