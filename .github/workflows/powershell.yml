@@ -1,0 +1,20 @@
+
+
+name: Test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:  
+    runs-on: windows-latest
+    
+    steps:
+      - name: Set the value
+        shell: pwsh
+        id: step_one
+        run: |
+          $Service = "XnappProcessingService"
+          write-Output("$Service - Not Running correct number of count")
