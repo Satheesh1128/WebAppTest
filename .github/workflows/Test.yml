@@ -17,16 +17,16 @@ jobs:
         run: |
           echo "action_state=yellow" >> $GITHUB_OUTPUT
           echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT       
-    # outputs:
-      # Test: ${{steps.step_one.outputs.action_state}}
-      # Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
+    outputs:
+      Test: ${{steps.step_one.outputs.action_state}}
+      Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
       
-      - name: Output Data
-        id: outputs
-        run: |
-        env:
-          Test: ${{steps.step_one.outputs.action_state}}
-          Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
+      # - name: Output Data
+       #  id: outputs
+       #  run: |
+       #  env:
+          # Test: ${{steps.step_one.outputs.action_state}}
+          # Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
 
   build2:  
     runs-on: windows-2019
@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Set the value
         run: |
-          echo ${{needs.build.outputs.env.Test}}
+          echo ${{needs.build.outputs.Test}}
