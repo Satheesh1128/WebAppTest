@@ -19,11 +19,13 @@ jobs:
         run: |
           echo "::set-output name=date::$(date +'%Y-%m-%d')"
           echo "::set-output name=date1::testing)"
+          echo "name=value" >> $GITHUB_OUTPUT
         
       - name: Test with environment variables
         run: |
-          $TAG_NAME
-          $TAG_NAME1
+          echo "$TAG_NAME"
+          echo "$TAG_NAME1"
         env:
           TAG_NAME: nightly-tag - ${{ steps.date.outputs.date }}
           TAG_NAME1: nightly-tag - ${{ steps.date.outputs.date1 }}
+          TAG_NAME3: nightly-tag - ${{ steps.date.outputs.name }}
