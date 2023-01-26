@@ -29,4 +29,4 @@ jobs:
           echo $Test
         env:
           Test: ${{ env.ReleaseRepoName }}
-          Test2: ${{ steps.step_one }}
+          # Test2: ${{ steps.step_one }}
