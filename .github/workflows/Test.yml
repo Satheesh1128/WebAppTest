@@ -22,8 +22,8 @@ jobs:
         
       - name: Test with environment variables
         run: |
-          echo $TAG_NAME
-          echo $TAG_NAME1
+          $TAG_NAME
+          $TAG_NAME1
         env:
           TAG_NAME: nightly-tag - ${{ steps.date.outputs.date }}
           TAG_NAME1: nightly-tag - ${{ steps.date.outputs.date1 }}
