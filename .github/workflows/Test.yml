@@ -13,7 +13,7 @@ jobs:
     
     steps:
       - name: Get-Current-Date
-        # id: step_one
+        id: step_one
         run: |
           echo "action_state=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_OUTPUT      
     outputs:
