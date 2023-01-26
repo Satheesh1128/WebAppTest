@@ -27,4 +27,4 @@ jobs:
         run: |
           echo $Test
         env:
-          Test: ${{ env.foo }}
+          Test: $foo
