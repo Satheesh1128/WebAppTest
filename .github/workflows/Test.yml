@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:  
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     steps:
       - name: Set the value
@@ -27,3 +27,11 @@ jobs:
         env:
           Test: ${{steps.step_one.outputs.action_state}}
           Test1: ${{steps.step_one.outputs.SELECTED_COLOR}}
+
+  build2:  
+    runs-on: windows-2019
+    needs: build
+    steps:
+      - name: Set the value
+        run: |
+          echo ${{needs.build.outputs.Test}}
