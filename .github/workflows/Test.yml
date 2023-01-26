@@ -12,18 +12,9 @@ jobs:
 
   build:
   
-    runs-on: windows-2019
-    env:
-        ReleaseRepoName: Build_Releases_Mobility
-
+    runs-on: ubuntu-latest
     steps:
-
-      - name: Set the value
-        run: |
-          echo "foo=bar" >> $GITHUB_ENV
-          
-      - name: Use the value
-        id: step_two
-        run: |
-          echo $foo
-          echo $GITHUB_ENV
+      - name: Set current date as env variable
+        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      - name: Echo current date
+        run: echo $NOW # Gives "2022-12-11T01:42:20"
