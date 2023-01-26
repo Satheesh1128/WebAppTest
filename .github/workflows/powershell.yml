@@ -13,8 +13,8 @@ jobs:
     
     steps:
       - name: Set the value
-        # shell: pwsh
+        shell: pwsh
         id: step_one
         run: |
-          powershell $Service = Get-Date -Format "dd/MM/yyyy HH:mm:ss" 
-          powershell write-Output("$Service - Not Running correct number of count")
+          $Service = Get-Date -Format "dd/MM/yyyy HH:mm:ss" 
+          write-Output("$Service - Not Running correct number of count")
