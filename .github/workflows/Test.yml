@@ -13,7 +13,11 @@ jobs:
     runs-on: windows-latest  # For a list of available runner types, refer to
 
     steps:
-      - name: Set current date as env variable
-        run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
-      - name: Echo current date
-        run: echo $NOW # Gives "2022-12-11T01:42:20"
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}" # This will output 'yellow'
