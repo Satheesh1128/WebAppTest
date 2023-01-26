@@ -18,3 +18,5 @@ jobs:
         run: |
           $Service = "XnappProcessingService"
           write-Output("$Service - Not Running correct number of count")
+        env:
+          Test1: $Service
