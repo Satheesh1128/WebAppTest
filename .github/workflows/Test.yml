@@ -18,7 +18,7 @@ jobs:
         id: step_one
         run: |
           # echo "action_state=yellow" >> $GITHUB_ENV
-          echo "yellow"
+          echo "action_state=yellow"
           
       - name: Use the value
         id: step_two
