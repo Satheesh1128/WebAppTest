@@ -14,21 +14,17 @@ jobs:
   
     runs-on: windows-latest
     steps:
-      - name: Get current date
-        id: date
-        run: |
-          echo "::set-output name=date::$(date +'%Y-%m-%d')"
-          echo "::set-output name=date1::testing)"
-          echo "name=value" >> $GITHUB_OUTPUT
-          echo "name1=value1"
-        
-      - name: Test with environment variables
-        run: |
-          echo "$TAG_NAME"
-          echo "$TAG_NAME1"
-        env:
-          TAG_NAME: nightly-tag - ${{ steps.date.outputs.date }}
-          TAG_NAME1: nightly-tag - ${{ steps.date.outputs.date1 }}
-          TAG_NAME3: nightly-tag - ${{ steps.date.outputs.name }}
-          TAG_NAME4: ${{ GITHUB_OUTPUT }}
-          TAG_NAME5: nightly-tag - ${{ steps.date.outputs.name1 }}
+    
+    - name: Set output
+      id: stepid
+      run: echo "::set-output name=count::5"
+      
+    - name: Oldway
+      run: echo "The count was ${{ steps.stepid.outputs.count }}"
+      
+    - name: Set output1
+      id: stepid1
+      run: echo "count=5" >> $GITHUB_OUTPUT
+      
+    - name: New Way
+      run: echo "The count was ${{ steps.stepid1.outputs.count }}"
